@@ -1,0 +1,26 @@
+h1{
+    color:black;
+    font-family: arial balck;
+    text-align: center;
+    font-size: 60px;
+}
+h3{
+    color:rgb(103, 103, 235);
+    font-size: 30px;
+    font-family: sans-serif;
+    
+}
+p, ol{
+    font-size: 20px;
+    font-family:sans-serif;
+    font-weight: 300;
+    font-style: oblique;
+
+}
+ul{
+    font-size: 20px;
+}
+
+body{
+    background-color: rgb(160, 156, 156);
+}
