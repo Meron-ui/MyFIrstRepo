@@ -28,8 +28,8 @@ blockquote{
     background-color: #FFFFA8;
 }
 
-#validator{
-    justify-content: right;
+div{
+    text-align: right;
 }
 
 pre{
