@@ -1,6 +1,6 @@
 
 body{
-    background-image: url("images/background.png");
+    background-image: url("./imagesLab3/background.png");
     margin: 0%;
     padding: 0%;
 
@@ -12,7 +12,7 @@ body{
 }
 
 #topphotodiv{
-   background-image: url("images/bannerbg.png");
+   background-image: url("./imagesLab3/bannerbg.png");
    height: 50px;
 }
 
@@ -43,7 +43,7 @@ h1{
 }
 
 #topboxheader{
-    background-image: url("images/rbg.png");
+    background-image: url("./imagesLab3/rbg.png");
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     color: red;
