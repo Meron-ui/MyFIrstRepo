@@ -27,7 +27,8 @@
     padding-left: 25px; 
 }
 #div2{
-    background-color: rgb(185, 185, 185)
+    background-color: rgb(185, 185, 185);
+    overflow: hidden;
 }
 #div3{
     background-color: gainsboro;
@@ -56,6 +57,7 @@
          width: 100%;
          position: absolute;
          margin-top:300px;
+         overflow: hidden;
          /* margin-left: 20px; */
     
     }
