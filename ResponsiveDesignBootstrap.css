@@ -53,7 +53,7 @@
         position: relative;
     }
      #div2{
-         width: 530px;
+         width: 100%;
          position: absolute;
          margin-top:300px;
          /* margin-left: 20px; */
