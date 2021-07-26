@@ -49,3 +49,8 @@ select{
     right:0px;
     position: fixed;
 }
+
+#picLint{
+     width: 88px;
+     height: 31px;		
+}
