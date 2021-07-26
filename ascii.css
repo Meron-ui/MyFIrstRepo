@@ -8,7 +8,9 @@
     font-family: monospace;
     font-size: 12pt;
     width: 90%;
+    overflow-y: scroll;
     height: 400px;
+    resize: none;
 }
 
 fieldset{
