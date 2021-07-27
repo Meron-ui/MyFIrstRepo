@@ -1,0 +1,36 @@
+
+#lab1, #lab2, #lab4{
+    margin-left: 5%;
+    font-size: 30px;
+}
+
+#email,#password,#url{
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 8px;
+    height: 30px;
+}
+
+#checkbox{
+    margin-left: 5%;
+    margin-top: 30px;
+}
+#lab3{
+    font-size: 30px;
+}
+#button{
+    height: 40px;
+    width: 100px;
+    margin-left: 5%;
+    margin-top: 8px;
+    background-color: rgb(40, 40, 228);
+    border-radius: 8px;
+    color: white;
+    font-size: 20px;
+}
+
+#p1{
+    color: gray;
+    margin-left: 5%;
+}
+
