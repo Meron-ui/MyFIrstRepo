@@ -44,5 +44,3 @@ var him = new Teacher();
 
 him.initialize("Prof. Meron", 45);
 him.teach("History");
-
-console.log(teach);
