@@ -1,6 +1,8 @@
-class Bank{
+"use strict";
+
+class Bank {
     static nextNumber;
-    
+
     constructor() {
         this._accounts = [];
     }
@@ -34,5 +36,4 @@ class Bank{
     endOfMonth() {
         console.log(this._accounts.map(acc => acc.endOfMonth()));
     }
-
 }
