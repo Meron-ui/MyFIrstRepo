@@ -1,73 +1,79 @@
 const express = require('express');
-const session=require('express-session');
 const path = require('path');
+const url = require('url');
+const session = require('express-session')
 const app = express();
 
+
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, "views"));
+
+app.set('views', path.join(__dirname, "view"));
 
 app.use(express.urlencoded({ extended: false }));
 
 app.use(session({
-    resave:false, //don't save session if unmodified
-    saveUninitialized:false, //don't create session until something stored
-    secret:'salt to the session'
+    resave: false,
+    saveUninitialized: false,
+    secret: 'salt for cookie signing',
 }));
 
 const PRODUCTS = [
-    { id: 1, name: 'Sugar', description: 'its so sweet', price: 10 },
-    { id: 2, name: 'Salt', description: 'you might find it sour ', price:20 },
-    { id: 3, name: 'Mango', description: 'its awesome', price: 25 }
-]
+    { id: 1, name: 'Product 1', description: 'Description', price: 3000 },
+    { id: 2, name: 'Product 2', description: 'Description', price: 5000 },
+    { id: 3, name: 'Product 3', description: 'Description', price: 7000 }]
+
+// app.get('/product/:id', (req, res) => {
+//     res.render("product", {
+//         ...PRODUCTS.find(e => e.id === parseInt(req.params.id))
+//     });
+// });
 
 app.use(function (req, res, next) {
-    if (!req.session.CART) {
-        req.session.CART = {};
+    if (!req.session.cart) {
+        req.session.cart = {};
     }
     next();
 });
 
 app.get('/product/1', (req, res) => {
     res.render("product", {
-        ...PRODUCTS.find(prod => prod.id === 1)
+        ...PRODUCTS.find(e => e.id === 1)
     });
 });
 
 app.get('/product/2', (req, res) => {
     res.render("product", {
-        ...PRODUCTS.find(prod => prod.id === 2)
+        ...PRODUCTS.find(e => e.id === 2)
     });
 });
 
 app.get('/product/3', (req, res) => {
     res.render("product", {
-        ...PRODUCTS.find(prod => prod.id === 3)
+        ...PRODUCTS.find(e => e.id === 3)
     });
 });
 
 app.post('/addToCart', (req, res, next) => {
     let item = req.body;
-    let exist = req.session.CART[item.name];
+
+    let exist = req.session.cart[item.name];
     if (exist) {
         exist.quantity += 1;
     } else {
         item.quantity = 1;
-        req.session.CART[item.name] = item;
+        req.session.cart[item.name] = item;
     }
-    res.redirect( "/cart");
+
+    res.redirect(url.format({
+        pathname: "/cart"
+    }));
 });
 
 app.get('/cart', (req, res, next) => {
     res.render("shoppingcart", {
-        products: req.session.CART
+        products: req.session.cart
     });
 });
 
-app.use((req, res) => {
-    res.status(404).send({
-    status: 404,
-    error: "Page Not Found:- add the full url names to find the link"
-    })
-   })
 
 app.listen(3000);
