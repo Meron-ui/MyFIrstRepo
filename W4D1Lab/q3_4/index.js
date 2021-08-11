@@ -22,11 +22,6 @@ const PRODUCTS = [
     { id: 2, name: 'Product 2', description: 'Description', price: 5000 },
     { id: 3, name: 'Product 3', description: 'Description', price: 7000 }]
 
-// app.get('/product/:id', (req, res) => {
-//     res.render("product", {
-//         ...PRODUCTS.find(e => e.id === parseInt(req.params.id))
-//     });
-// });
 
 app.use(function (req, res, next) {
     if (!req.session.cart) {
